@@ -3,10 +3,9 @@ angular.module('shortly.services', [])
 .factory('Links', function ($http) {
   // Your code here
   var getLinks = function () {
-
     return $http({
       method: 'GET',
-      url: '/api/links'
+      url: '/api/links',
     })
     // response from the get request above
     .then(function(resp){
@@ -14,8 +13,24 @@ angular.module('shortly.services', [])
       return resp.data;
     });
   };
+
+  var addLink = function (link) {
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: link
+    })
+    // response from the get request above
+    .then(function(resp){
+      // data is array of link objects
+      console.log('data:', resp.data);
+      return resp.data;
+    });
+  };
+
   return {
-    getLinks: getLinks
+    getLinks: getLinks,
+    addLink: addLink
   };
 })
 
