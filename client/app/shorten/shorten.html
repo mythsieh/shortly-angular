@@ -1,20 +1,9 @@
 <div id='container' ng-controller="ShortenController">
 <!-- Your code here -->
-  <form name="shortenForm" ng-submit='addLink(url)'>
-      <input class='text' type='text' name='url'>
+  <form name="shortenForm" ng-submit='addLink()'>
+      <input class='text' type='text' name='url' ng-model='link.url'>
       <input type='submit' value='Shorten'>
   </form>
-  <img class='spinner' src='/spiffygif_46x46.gif'>
+  <img class='spinner' src='./../../assets/spiffygif_46x46.gif'>
   <div class='message'></div>
-</div>
-
-
-<div id='signin'>
-  <h1>signin</h1>
-  <form name="signinForm" ng-submit='signin()'>
-    <input type='text'ng-model='user.username'>
-    <input type="password" ng-model='user.password'>
-    <button>signin</button>
-  </form>
-  <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
 </div>

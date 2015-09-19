@@ -23,7 +23,6 @@ angular.module('shortly.services', [])
     // response from the get request above
     .then(function(resp){
       // data is array of link objects
-      console.log('data:', resp.data);
       return resp.data;
     });
   };
